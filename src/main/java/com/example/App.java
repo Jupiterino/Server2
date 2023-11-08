@@ -15,12 +15,14 @@ public class App {
 
         try {
             System.out.println("1 SERVER partito in esecuzione...");
-
+            //dichiaro arraylist vuoto
+            //passo il riferimento all'arraylist
             
             ServerSocket server = new ServerSocket(3000);
             do{
                 Socket client = server.accept();
                 MioThread m = new MioThread(client);
+                //aggiungo all'arraylist
                 m.start();
             }while(true);
             
